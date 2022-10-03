@@ -1,0 +1,25 @@
+<div class="container">
+  <p>Date is: {{ localDate | date:'dd-MM-yyyy' }} <button (click)="showData()">Show Data in Console</button> </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let weekDay of weekDayNames">{{ weekDay }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let week of weeks">
+        <td *ngFor="let dayObj of week">
+          <ng-container *ngIf="dayObj.schedules">
+            <span>{{ dayObj.day }}</span>
+            <div class="tasks" cdkDropList [cdkDropListData]="dayObj.schedules" (cdkDropListDropped)="drop($event)">
+              <div *ngFor="let schedule of dayObj.schedules" cdkDrag class="grab">
+                {{ schedule.title }}
+              </div>
+            </div>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

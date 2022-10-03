@@ -1,0 +1,11 @@
+<h2>Angular CDK Drag And Drop
+    <div class="subtitle">with Custom Calendar</div>
+</h2>
+<pre>
+    Drag & Drop todos between days and months
+</pre>
+<hr>
+
+<div class="container" cdkDropListGroup>
+    <app-calendar *ngFor="let date of dates" [date]="date"></app-calendar>
+</div>

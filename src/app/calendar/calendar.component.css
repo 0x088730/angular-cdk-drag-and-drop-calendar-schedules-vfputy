@@ -1,0 +1,26 @@
+table,
+tr,
+th,
+td {
+  border: 1px solid black;
+}
+
+td {
+  min-width: 50px;
+  min-height: 50px;
+  height: 50px;
+}
+
+.container {
+  margin: 10px;
+}
+
+.tasks {
+  background-color: yellow;
+  height: 52px;
+}
+
+.grab {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
